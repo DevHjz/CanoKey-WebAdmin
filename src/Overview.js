@@ -77,22 +77,22 @@ export default function Overview() {
           <Card>
             <CardContent>
               <Typography variant="h2">
-                CanoKey Info
+                CanoKey 详情
               </Typography>
               <Typography>
-                Connected: {device !== null ? 'true' : 'false'}
+                连接情况： {device !== null ? '已连接' : '未连接'}
               </Typography>
               <Typography>
-                {device !== null ? `Model: ${model}` : null}
+                {device !== null ? `型号： ${model}` : null}
               </Typography>
               <Typography>
-                {device !== null ? `Serial Number: ${sn}` : null}
+                {device !== null ? `序列号： ${sn}` : null}
               </Typography>
               <Typography>
-                {device !== null ? `Chip ID: ${id}` : null}
+                {device !== null ? `芯片编号： ${id}` : null}
               </Typography>
               <Typography>
-                {device !== null ? `Firmware Version: ${firmwareVersion}` : null}
+                {device !== null ? `固件版本： ${firmwareVersion}` : null}
               </Typography>
             </CardContent>
           </Card>
@@ -101,10 +101,10 @@ export default function Overview() {
           <Card>
             <CardContent className={classes.card}>
               <Typography variant="h4">
-                Admin
+                管理
               </Typography>
               <Typography>
-                Admin applet manages your CanoKey.
+              管理小程序管理您的 CanoKey。
               </Typography>
             </CardContent>
             <CardActions>
@@ -119,7 +119,7 @@ export default function Overview() {
                 OATH
               </Typography>
               <Typography>
-                CanoKey implements a custom OATH (Open AuTHentication) applet.
+                CanoKey 实现了一个自定义的 OATH（开放认证）小程序。
               </Typography>
             </CardContent>
             <CardActions>
@@ -134,7 +134,7 @@ export default function Overview() {
                 OpenPGP
               </Typography>
               <Typography>
-                CanoKey implements OpenPGP standard.
+                CanoKey 实施 OpenPGP 标准。
               </Typography>
             </CardContent>
             <CardActions>
@@ -149,7 +149,7 @@ export default function Overview() {
                 PIV
               </Typography>
               <Typography>
-                CanoKey implements PIV standard.
+                CanoKey 实施 PIV 标准。
               </Typography>
             </CardContent>
             <CardActions>

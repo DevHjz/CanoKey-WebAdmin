@@ -314,18 +314,18 @@ export default function Overview() {
       <Card className={classes.card}>
         <CardContent>
           <Typography variant="h3">
-            Admin Applet
+            管理小程序
           </Typography>
           <Typography>
-            Authenticated: {authenticated ? 'true' : 'false'}
+            已认证： {authenticated ? '是' : '否'}
           </Typography>
           <Typography>
-            Storage Usage: {flashSpace}
+            存储用量：{flashSpace}
           </Typography>
         </CardContent>
         <CardActions>
           <Button onClick={onAuthenticate} variant="contained">
-            Authenticate
+            认证
           </Button>
         </CardActions>
       </Card>
@@ -335,60 +335,60 @@ export default function Overview() {
             <Card className={classes.card}>
               <CardContent>
                 <Typography variant="h3">
-                  Config
+                  配置
                 </Typography>
                 <Typography variant="h6">
                   LED:
                   <Switch checked={state.led} onChange={setLedStatus}/>
                 </Typography>
                 <Typography variant="h6">
-                  HOTP on touch:
+                  触摸 HOTP：
                   <Switch checked={state.hotp} onChange={setHotpStatus}/>
                 </Typography>
                 <Typography variant="h6">
-                  NDEF readonly:
+                  NDEF 只读：
                   <Switch checked={state.ndefReadonly} onChange={setNDEFReadonly}/>
                 </Typography>
                 {
                   firmwareVersion.toString() < "1.5" ?
                     <div>
                       <Typography variant="h6">
-                        OpenPGP SIG touch policy:
+                      OpenPGP SIG 触摸政策：
                         <Switch checked={state.sigTouch} onChange={setSigTouch}/>
                       </Typography>
                       <Typography variant="h6">
-                      OpenPGP DEC touch policy:
+                      OpenPGP DEC 触摸政策：
                       <Switch checked={state.decTouch} onChange={setDecTouch}/>
                       </Typography>
                       <Typography variant="h6">
-                      OpenPGP AUT touch policy:
+                      OpenPGP AUT 触摸政策：
                       <Switch checked={state.autTouch} onChange={setAutTouch}/>
                       </Typography>
                       <Typography variant="h6">
-                      OpenPGP touch cache time: {state.cacheTime}
-                      <Button variant="contained" onClick={onChangeCacheTime}> Change </Button>
+                      OpenPGP 触摸缓存时间： {state.cacheTime}
+                      <Button variant="contained" onClick={onChangeCacheTime}> 改变 </Button>
                       </Typography>
                     </div> :
                     <div>
                       <Typography variant="h6">
-                        NDEF enabled:
+                        启用 NDEF：
                         <Switch checked={state.ndefEnabled} onChange={setNDEFStatus}/>
                       </Typography>
                       <Typography variant="h6">
-                        WebUSB prompt enabled:
+                        启用 WebUSB 提示：
                         <Switch checked={state.webusbLandingEnabled} onChange={setWebUSBLandingStatus}/>
                       </Typography>
                     </div>
                 }
               </CardContent>
               <CardActions>
-                <Button variant="contained" onClick={onChangePin}> Change PIN </Button>
+                <Button variant="contained" onClick={onChangePin}> 更改 PIN </Button>
                 {
                   model.toString().indexOf("STM32") >= 0 ?
                     <div>
-                      <Button variant="contained" onClick={enterDFU}>Enter DFU (development only)</Button>
+                      <Button variant="contained" onClick={enterDFU}>进入 DFU（仅限开发用途）</Button>
                       <Button variant="contained" onClick={() => window.location = 'https://dfu.canokeys.org/'}>
-                        Go to Web DFU util
+                        转到 Web DFU 实用程序
                       </Button>
                     </div>
                     : null
@@ -399,25 +399,24 @@ export default function Overview() {
             <Card className={classes.card}>
               <CardContent>
                 <Typography variant="h3">
-                  Reset Applet
+                  重置小程序
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button onClick={resetOpenPGP} variant="contained">Reset OpenPGP</Button>
-                <Button onClick={resetPIV} variant="contained">Reset PIV</Button>
-                <Button onClick={resetOATH} variant="contained">Reset OATH</Button>
-                <Button onClick={resetNDEF} variant="contained">Reset NDEF</Button>
+                <Button onClick={resetOpenPGP} variant="contained">重置 OpenPGP</Button>
+                 <Button onClick={resetPIV} variant="contained">重置 PIV</Button>
+                 <Button onClick={resetOATH} variant="contained">重置 OATH</Button>
+                 <Button onClick={resetNDEF} variant="contained">重置 NDEF</Button>
               </CardActions>
             </Card>
           </div>
           : null
       }
       <Dialog open={pinDialogOpen} onClose={() => setPinDialogOpen(false)}>
-        <DialogTitle>Enter PIN to Authenticate Admin Applet</DialogTitle>
+        <DialogTitle>输入 PIN 以验证管理员小程序</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Enter PIN below. The default is 123456. Please be aware of PIN retry count. This will not be stored in
-            browser.
+            在下面输入 PIN。 默认值为 123456。请注意 PIN 重试次数。 这不会存储在浏览器中。
           </DialogContentText>
           <TextField
             type="password"
@@ -428,15 +427,15 @@ export default function Overview() {
         </DialogContent>
         <DialogActions>
           <Button color="primary" onClick={doAuthenticate}>
-            Authenticate
+            认证
           </Button>
         </DialogActions>
       </Dialog>
       <Dialog open={chPinDialogOpen} onClose={() => setChPinDialogOpen(false)}>
-        <DialogTitle>Enter new pin for Admin Applet</DialogTitle>
+        <DialogTitle>输入管理小程序的新 PIN</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Enter new pin for Admin Applet.
+            输入管理小程序的新 PIN。
           </DialogContentText>
           <TextField
             type="password"
