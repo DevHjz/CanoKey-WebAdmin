@@ -122,15 +122,15 @@ export default function App() {
             <MenuIcon/>
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            CanoKey Web Console
+            CanoKey 网页控制台
           </Typography>
           {
             device ?
               <Button variant="contained" onClick={() => dispatch(disconnect())}>
-                Disconnect
+                断开链接
               </Button> :
               <Button variant="contained" onClick={connectUSB}>
-                Connect
+                连接
               </Button>
           }
         </Toolbar>
@@ -143,18 +143,18 @@ export default function App() {
           <Divider/>
           <ListItem button onClick={showOverview}>
             <ListItemIcon><HomeIcon/></ListItemIcon>
-            <ListItemText>Overview</ListItemText>
+            <ListItemText>概述</ListItemText>
           </ListItem>
           <ListItem button onClick={() => setAppletOpen(!appletOpen)}>
             <ListItemIcon><AppsIcon/></ListItemIcon>
-            <ListItemText>Applets</ListItemText>
+            <ListItemText>小程序</ListItemText>
             {appletOpen ? <ExpandLessIcon/> : <ExpandMoreIcon/>}
           </ListItem>
           <Collapse in={appletOpen}>
             <List>
               <ListItem button onClick={showAdmin} className={classes.nested}>
                 <ListItemIcon><ArrowForwardIcon/></ListItemIcon>
-                <ListItemText>Admin</ListItemText>
+                <ListItemText>管理</ListItemText>
               </ListItem>
               <ListItem button onClick={showOATH} className={classes.nested}>
                 <ListItemIcon><ArrowForwardIcon/></ListItemIcon>
@@ -172,7 +172,7 @@ export default function App() {
           </Collapse>
           <ListItem button onClick={showAPDU} className={classes.nested}>
             <ListItemIcon><SyncAltIcon/></ListItemIcon>
-            <ListItemText>APDU Console & History</ListItemText>
+            <ListItemText>APDU 控制台 & 历史</ListItemText>
           </ListItem>
         </List>
       </Drawer>

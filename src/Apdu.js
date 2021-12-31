@@ -197,7 +197,7 @@ export default function Apdu() {
           <Card>
             <CardContent>
               <Typography variant="h4">
-                Send Command APDU
+              发送 APDU 命令
               </Typography>
               <TextField
                 autoFocus
@@ -252,10 +252,10 @@ export default function Apdu() {
           <Card>
             <CardContent>
               <Typography variant="h4">
-                APDU History
+                APDU 历史
               </Typography>
               <Typography>
-                From earliest to latest
+                从最早到最晚
               </Typography>
               <List>
                 {

@@ -446,15 +446,15 @@ export default function Overview() {
         </DialogContent>
         <DialogActions>
           <Button color="primary" onClick={doChangePin}>
-            Change Pin
+            更换 Pin
           </Button>
         </DialogActions>
       </Dialog>
       <Dialog open={changeCacheTimeDialogOpen} onClose={() => setChangeCacheTimeDialogOpen(false)}>
-        <DialogTitle>Enter new cache time</DialogTitle>
+        <DialogTitle>输入新的缓存时间</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Enter new cache time for OpenPGP touch (in seconds): 0 ~ 255.
+            为 OpenPGP 触摸 输入新的缓存时间（以秒为单位）：0 ~ 255。
           </DialogContentText>
           <TextField
             type="number"
@@ -466,7 +466,7 @@ export default function Overview() {
         </DialogContent>
         <DialogActions>
           <Button color="primary" onClick={doChangeCacheTime}>
-            Confirm
+            确认
           </Button>
         </DialogActions>
       </Dialog>
